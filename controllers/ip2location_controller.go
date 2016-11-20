@@ -4,6 +4,7 @@ import (
 	"geoip-webservice/models"
 
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func IP2LocationController(c *gin.Context) {
@@ -11,5 +12,5 @@ func IP2LocationController(c *gin.Context) {
 
 	geolocation := models.IP2LocationQuery(ipaddress)
 
-	c.JSON(200, geolocation)
+	c.JSON(http.StatusOK, geolocation)
 }

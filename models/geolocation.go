@@ -9,7 +9,7 @@ type Geolocation struct {
 }
 
 type Error struct {
-	ErrorMessage string 	`json:"error_message"`
+	ErrorMessage string	`json:"error_message"`
 }
 
 type Retriever interface {
