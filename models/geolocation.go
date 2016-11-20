@@ -7,11 +7,3 @@ type Geolocation struct {
 	Latitude float32 	`json:"latitude"`
 	Longitude float32	`json:"longitude"`
 }
-
-type Error struct {
-	ErrorMessage string	`json:"error_message"`
-}
-
-type Retriever interface {
-	Query(ipaddress string) interface{}
-}
