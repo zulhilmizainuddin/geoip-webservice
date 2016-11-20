@@ -14,5 +14,5 @@ func main() {
 
 	r.GET("/ip2location", controllers.IP2LocationController)
 
-	r.Run(":3000")
+	r.Run(":4000")
 }
