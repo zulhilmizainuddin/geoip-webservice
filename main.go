@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	router := gin.Default()
+	r := gin.Default()
 
-	router.GET("/ip2location", controllers.IP2LocationController)
+	r.GET("/ip2location", controllers.IP2LocationController)
 
-	router.Run(":3000")
+	r.Run(":3000")
 }

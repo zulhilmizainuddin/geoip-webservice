@@ -6,10 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func IP2LocationController(context *gin.Context) {
-	ipaddress := context.Query("ipaddress")
+func IP2LocationController(c *gin.Context) {
+	ipaddress := c.Query("ipaddress")
 
 	geolocation := models.IP2LocationQuery(ipaddress)
 
-	context.JSON(200, geolocation)
+	c.JSON(200, geolocation)
 }
