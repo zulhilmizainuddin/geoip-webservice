@@ -6,14 +6,15 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
 )
 
 func QueryStringValidationMiddleware(c *gin.Context) {
 	var ipaddress string
 
-	if ipaddress = c.Query("ipaddress"); ipaddress == "" {
+	if ipaddress = c.Query(viper.GetString("querystrings.ipaddress")); ipaddress == "" {
 		err := models.Error{
-			ErrorMessage: "IP address not provided",
+			ErrorMessage: viper.GetString("errors.ip_address_not_provided"),
 		}
 
 		c.JSON(http.StatusBadRequest, err)
@@ -23,7 +24,7 @@ func QueryStringValidationMiddleware(c *gin.Context) {
 
 	if net.ParseIP(ipaddress) == nil {
 		err := models.Error{
-			ErrorMessage: "Invalid IP address provided",
+			ErrorMessage: viper.GetString("errors.invalid_ip_address_provided"),
 		}
 
 		c.JSON(http.StatusBadRequest, err)

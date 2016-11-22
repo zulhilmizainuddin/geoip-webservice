@@ -1,0 +1,15 @@
+[server]
+port = ":4000"
+
+[routes]
+ip2location = "/ip2location"
+
+[querystrings]
+ipaddress = "ipaddress"
+
+[databases]
+ip2location = "./databases/ip2location/IP2LOCATION-LITE-DB5.IPV6.BIN"
+
+[errors]
+ip_address_not_provided = "IP address not provided"
+invalid_ip_address_provided = "Invalid IP address provided"

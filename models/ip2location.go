@@ -4,10 +4,11 @@ import (
 	"path/filepath"
 
 	"github.com/ip2location/ip2location-go"
+	"github.com/spf13/viper"
 )
 
 func IP2LocationQuery(ipaddress string) interface{} {
-	path, _ := filepath.Abs("./databases/ip2location/IP2LOCATION-LITE-DB5.IPV6.BIN")
+	path, _ := filepath.Abs(viper.GetString("databases.ip2location"))
 
 	ip2location.Open(path)
 
