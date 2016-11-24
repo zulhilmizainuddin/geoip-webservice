@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+
+databases/ip2location/*.BIN
+
+debug*
