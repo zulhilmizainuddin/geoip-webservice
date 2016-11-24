@@ -3,6 +3,8 @@ language: go
 go:
  - 1.7
 
+go_import_path: geoip-webservice
+
 install:
  - go get github.com/gin-gonic/gin
  - go get github.com/ip2location/ip2location-go
