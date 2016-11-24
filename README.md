@@ -1,4 +1,4 @@
-# geoip-webservice
+# geoip-webservice [![Build Status](https://travis-ci.org/zulhilmizainuddin/geoip-webservice.svg?branch=master)](https://travis-ci.org/zulhilmizainuddin/geoip-webservice)
 RESTful service for retrieving geolocations from IP addresses using Go and Gin framework
 
 Geolocation data provided by IP2Location LITE databases.
