@@ -3,9 +3,9 @@ language: go
 go:
  - 1.7
 
- install:
-  - go get github.com/gin-gonic/gin
-  - go get github.com/ip2location/ip2location-go
-  - go get github.com/spf13/viper
+install:
+ - go get github.com/gin-gonic/gin
+ - go get github.com/ip2location/ip2location-go
+ - go get github.com/spf13/viper
 
 script: go build
