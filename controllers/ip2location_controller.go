@@ -12,7 +12,8 @@ import (
 func IP2LocationController(c *gin.Context) {
 	ipaddress := c.Query(viper.GetString("querystrings.ipaddress"))
 
-	geolocation := models.IP2LocationQuery(ipaddress)
+	ip2location := models.IP2Location{}
+	geolocation := ip2location.Query(ipaddress)
 
 	c.JSON(http.StatusOK, geolocation)
 }

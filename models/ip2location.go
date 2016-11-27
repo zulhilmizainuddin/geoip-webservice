@@ -7,7 +7,9 @@ import (
 	"github.com/spf13/viper"
 )
 
-func IP2LocationQuery(ipaddress string) interface{} {
+type IP2Location struct{}
+
+func (this *IP2Location) Query(ipaddress string) interface{} {
 	path, _ := filepath.Abs(viper.GetString("databases.ip2location"))
 
 	ip2location.Open(path)
