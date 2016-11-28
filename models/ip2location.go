@@ -13,6 +13,7 @@ func (this *IP2Location) Query(ipaddress string) interface{} {
 	path, _ := filepath.Abs(viper.GetString("databases.ip2location"))
 
 	ip2location.Open(path)
+	defer ip2location.Close()
 
 	results := ip2location.Get_all(ipaddress)
 	geolocation := Geolocation{
@@ -22,8 +23,6 @@ func (this *IP2Location) Query(ipaddress string) interface{} {
 		Latitude:  results.Latitude,
 		Longitude: results.Longitude,
 	}
-
-	ip2location.Close()
 
 	return geolocation
 }
