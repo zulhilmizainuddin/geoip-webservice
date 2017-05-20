@@ -12,6 +12,7 @@ Get project dependencies.
 go get github.com/gin-gonic/gin
 go get github.com/ip2location/ip2location-go
 go get github.com/spf13/viper
+go get github.com/oschwald/geoip2-golang
 ```
 
 Install Node.js. Follow the instruction at https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04.
