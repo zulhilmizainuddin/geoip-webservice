@@ -19,6 +19,7 @@ func main() {
 	r.Use(middlewares.QueryStringValidationMiddleware)
 
 	r.GET(viper.GetString("routes.ip2location"), controllers.IP2LocationController)
+	r.GET(viper.GetString("routes.maxmind"), controllers.MaxMindController)
 
 	r.Run(viper.GetString("server.port"))
 }

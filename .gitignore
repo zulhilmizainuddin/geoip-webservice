@@ -2,5 +2,6 @@
 .vscode/
 
 databases/ip2location/*.BIN
+databases/maxmind/*.mmdb
 
 debug*

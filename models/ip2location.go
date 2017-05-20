@@ -9,7 +9,7 @@ import (
 
 type IP2Location struct{}
 
-func (this *IP2Location) Query(ipaddress string) interface{} {
+func (this *IP2Location) Query(ipaddress string) Geolocation {
 	path, _ := filepath.Abs(viper.GetString("databases.ip2location"))
 
 	ip2location.Open(path)
@@ -20,8 +20,8 @@ func (this *IP2Location) Query(ipaddress string) interface{} {
 		IPAddress: ipaddress,
 		City:      results.City,
 		Country:   results.Country_long,
-		Latitude:  results.Latitude,
-		Longitude: results.Longitude,
+		Latitude:  float64(results.Latitude),
+		Longitude: float64(results.Longitude),
 	}
 
 	return geolocation
