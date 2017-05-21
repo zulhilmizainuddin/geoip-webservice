@@ -19,7 +19,7 @@ RUN wget https://www.dropbox.com/s/3dimi97x9f0qwxe/IP2LOCATION-LITE-DB5.IPV6.BIN
     rm -fv ./databases/ip2location/$IP2LOCATION_DATABASE
 
 RUN wget https://www.dropbox.com/s/4zdyyip84p5opl7/GeoLite2-City.tar.gz?dl=1 -O ./databases/maxmind/$MAXMIND_DATABASE && \
-    tar -xvzf ./databases/maxmind/$MAXMIND_DATABASE -C ./databases/maxmind && \
+    tar -xvzf ./databases/maxmind/$MAXMIND_DATABASE --strip-components=1 -C ./databases/maxmind && \
     rm -fv ./databases/maxmind/$MAXMIND_DATABASE
 
 EXPOSE 4000
