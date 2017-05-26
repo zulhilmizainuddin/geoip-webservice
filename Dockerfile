@@ -6,10 +6,10 @@ RUN apk add --update git wget unzip tar nodejs && \
 WORKDIR /go/src/geoip-webservice
 COPY . .
 
-RUN go get github.com/gin-gonic/gin && \
-    go get github.com/ip2location/ip2location-go && \
-    go get github.com/spf13/viper && \
-    go get github.com/oschwald/geoip2-golang
+RUN go get -v github.com/gin-gonic/gin && \
+    go get -v github.com/ip2location/ip2location-go && \
+    go get -v github.com/spf13/viper && \
+    go get -v github.com/oschwald/geoip2-golang
 
 ENV IP2LOCATION_DATABASE IP2LOCATION-LITE-DB5.IPV6.BIN.ZIP
 ENV MAXMIND_DATABASE GeoLite2-City.tar.gz
