@@ -1,7 +1,7 @@
 # geoip-webservice [![Build Status](https://travis-ci.org/zulhilmizainuddin/geoip-webservice.svg?branch=master)](https://travis-ci.org/zulhilmizainuddin/geoip-webservice)
 RESTful service for retrieving geolocations from IP addresses using Go and Gin framework
 
-Geolocation data provided by IP2Location LITE databases.
+Geolocation data provided by IP2Location LITE and MaxMind GeoLite2 databases.
 
 ## Getting Started
 
@@ -9,10 +9,10 @@ Install Go. Follow the instruction at https://www.digitalocean.com/community/tut
 
 Get project dependencies.
 ```bash
-go get github.com/gin-gonic/gin
-go get github.com/ip2location/ip2location-go
-go get github.com/spf13/viper
-go get github.com/oschwald/geoip2-golang
+go get -v github.com/gin-gonic/gin
+go get -v github.com/ip2location/ip2location-go
+go get -v github.com/spf13/viper
+go get -v github.com/oschwald/geoip2-golang
 ```
 
 Install Node.js. Follow the instruction at https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04.
@@ -23,6 +23,8 @@ npm install -g pm2
 ```
 
 Download IP2LOCATION-LITE-DB5.IPV6.BIN from https://lite.ip2location.com/database-ip-country-region-city-latitude-longitude and place into the databases/ip2location directory.
+
+Download GeoLite2-City_xxxxxxxx.tar.gz from http://dev.maxmind.com/geoip/geoip2/geolite2 and place into the databases/maxmind directory.
 
 Start the service using PM2.
 ```bash
