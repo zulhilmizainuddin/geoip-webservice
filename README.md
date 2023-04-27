@@ -1,4 +1,4 @@
-# geoip-webservice ![Build Status](https://github.com/zulhilmizainuddin/geoip-webservice/actions/workflows/build.yml/badge.svg?branch=master)
+# geoip-webservice ![Build Status](https://github.com/zulhilmizainuddin/geoip-webservice/actions/workflows/build.yml/badge.svg)
 
 RESTful service for retrieving geolocations from IP addresses using Go and Gin framework
 
