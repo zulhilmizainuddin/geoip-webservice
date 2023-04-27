@@ -1,15 +1,9 @@
-FROM golang:alpine
+FROM golang:1.20.3-alpine
 
-RUN apk add --update git wget unzip tar nodejs && \
-    npm install -g pm2
+RUN apk add --update git wget unzip tar
 
 WORKDIR /go/src/geoip-webservice
 COPY . .
-
-RUN go get -v github.com/gin-gonic/gin && \
-    go get -v github.com/ip2location/ip2location-go && \
-    go get -v github.com/spf13/viper && \
-    go get -v github.com/oschwald/geoip2-golang
 
 ENV IP2LOCATION_DATABASE IP2LOCATION-LITE-DB5.IPV6.BIN.ZIP
 ENV MAXMIND_DATABASE GeoLite2-City.tar.gz
@@ -22,6 +16,8 @@ RUN wget https://www.dropbox.com/s/4zdyyip84p5opl7/GeoLite2-City.tar.gz?dl=1 -O 
     tar -xvzf ./databases/maxmind/$MAXMIND_DATABASE --strip-components=1 -C ./databases/maxmind && \
     rm -fv ./databases/maxmind/$MAXMIND_DATABASE
 
+RUN go build -o /go/bin/geoip-webservice
+
 EXPOSE 4000
 
-CMD ["pm2-docker", "start", "go", "--", "run", "/go/src/geoip-webservice/main.go"]
+CMD ["/go/bin/geoip-webservice"]

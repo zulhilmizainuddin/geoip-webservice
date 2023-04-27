@@ -1,9 +1,10 @@
 package middlewares
 
 import (
-	"geoip-webservice/models"
 	"net"
 	"net/http"
+
+	"github.com/zulhilmizainuddin/geoip-webservice/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
