@@ -16,6 +16,8 @@ RUN wget https://www.dropbox.com/s/4zdyyip84p5opl7/GeoLite2-City.tar.gz?dl=1 -O 
     tar -xvzf ./databases/maxmind/$MAXMIND_DATABASE --strip-components=1 -C ./databases/maxmind && \
     rm -fv ./databases/maxmind/$MAXMIND_DATABASE
 
+RUN go build -o /go/bin/geoip-webservice
+
 EXPOSE 4000
 
-CMD ["go", "run", "/go/src/geoip-webservice/main.go"]
+CMD ["/go/bin/geoip-webservice"]
