@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"geoip-webservice/models"
+	"github.com/zulhilmizainuddin/geoip-webservice/models"
 
 	"net/http"
 

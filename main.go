@@ -1,9 +1,9 @@
 package main
 
 import (
-	"geoip-webservice/controllers"
-	"geoip-webservice/middlewares"
-	"geoip-webservice/utils"
+	"github.com/zulhilmizainuddin/geoip-webservice/controllers"
+	"github.com/zulhilmizainuddin/geoip-webservice/middlewares"
+	"github.com/zulhilmizainuddin/geoip-webservice/utils"
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
